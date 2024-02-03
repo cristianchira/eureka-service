@@ -1,0 +1,16 @@
+# 1. Configure server port
+# 2. Fetch registry and register with eureka if we have multiple eureka servers on network
+     # I don't want this application to become a client to another Eureka server and hence
+         # I'll make this as a standalone Eureka server who will not be becoming a client to any other
+         # service.
+     #So Eureka Client fetch registry is false.
+         #That means I do not want to fetch any registry from any other Eureka server on the network
+     # And secondly, register with another Eureka also as false.
+         # So register with Eureka as false.
+server:
+  port: 8761
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
